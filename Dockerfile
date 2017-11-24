@@ -8,5 +8,6 @@ COPY ZuluJCEPolicies/*.jar /usr/lib/jvm/zulu-8-amd64/jre/lib/security/
 RUN apk add tar && apk add gzip
 
 RUN mkdir -p /opt && cd /opt && \
-    wget http://www.us.apache.org/dist/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.7.tgz | tar -zx && \
+    wget http://www.us.apache.org/dist/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.7.tgz && \
+    tar -zx spark-2.2.0-bin-hadoop2.7.tgz && \
     ln -s spark-spark-2.2.0-bin-hadoop2.7 spark
